@@ -10,6 +10,7 @@ public class Main {
 		String c = "c";
 		String d = "d";
 		String e = "e";
+		String f = "f";
 		
 		String e1 = "e1";
 		String e2 = "e2";
@@ -17,14 +18,18 @@ public class Main {
 		String e4 = "e4";
 		String e5 = "e5";
 		String e6 = "e6";
+		String e7 = "e7";
+		String e8 = "e8";
 		
-		OurGraph<String, String> elGrafo = new OurGraph<String, String>(5);
+		OurGraph<String, String> elGrafo = new OurGraph<String, String>(6);
 		elGrafo.insert(a, b, 2, e1);
 		elGrafo.insert(a, c, 3, e2);
 		elGrafo.insert(d, e, 4, e6);
 		elGrafo.insert(a, e, 9, e3);
 		elGrafo.insert(e, b, 3, e4);
 		elGrafo.insert(c, e, 1, e5);
+		elGrafo.insert(c, f, 2, e7);
+		elGrafo.insert(f, d, 2, e8);
 		
 		
 		
@@ -41,21 +46,21 @@ public class Main {
 
 		System.out.println("");
 		System.out.println("");
-//		int[][] hola = elGrafo.dijkstra(a);
-//		for(int i = 0; i < hola[0].length; i++) {
-//			System.out.print(hola[0][i]+ " ");
-//		}
-//		System.out.println("");
-//		for(int i = 0; i < hola[0].length; i++) {
-//			System.out.print(hola[1][i]+ " ");
-//		}
+		int[][] hola = elGrafo.dijkstra(b);
+		for(int i = 0; i < hola[0].length; i++) {
+			System.out.print(hola[0][i]+ " ");
+		}
+		System.out.println("");
+		for(int i = 0; i < hola[0].length; i++) {
+			System.out.print(hola[1][i]+ " ");
+		}
 		
 //		for(int i = 0; i < elGrafo.getTheArrayV().size(); i++) {
 //			System.out.print(elGrafo.getTheArrayV().get(2)+" ");
 //		}
 		System.out.println("");
 		System.out.println("");
-		Stack<String> camino = elGrafo.dijkstraWay(b, c);
+		Stack<String> camino = elGrafo.dijkstraWay(b, f);
 		while(!camino.isEmpty()) {
 			System.out.println(camino.pop());
 		}
