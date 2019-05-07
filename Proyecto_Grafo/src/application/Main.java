@@ -35,16 +35,31 @@ public class Main extends Application {
 		Building buildingJ = new Building("Edificio J");	Building bSoccerEleven = new Building("Cancha futbol once");
 		Building buildingM = new Building("Edificio M");	Building bCaba = new Building("Caballerisas");
 	
-		Road roadAM = new Road("A-M", 65);		Road roadAM = new Road("A-M", 65);		Road roadAM = new Road("A-M", 65);
-		Road roadAS = new Road("A-S", 78);		Road roadAM = new Road("A-M", 65);		Road roadAM = new Road("A-M", 65);
-		Road roadABi = new Road("A-Bi", 25);	Road roadAM = new Road("A-M", 65);
-		Road roadACe = new Road("A-Ce", 33);		Road roadAM = new Road("A-M", 65);
-		Road roadAAu = new Road("A-Au", 60);		Road roadAM = new Road("A-M", 65);
-		Road roadBBi = new Road("B-Bi", 27);		Road roadAM = new Road("A-M", 65);
-		Road roadBK = new Road("B-K", 80);		Road roadAM = new Road("A-M", 65);
-		Road roadBM = new Road("B-M", 65);		Road roadAM = new Road("A-M", 65);
-		Road roadBM = new Road("B-M", 65);		Road roadAM = new Road("A-M", 65);
-		Road roadBM = new Road("B-M", 65);		Road roadAM = new Road("A-M", 65);
+		Road roadAM = new Road("A-M", 65);		Road roadCS = new Road("C-S", 120);		Road roadEI = new Road("E-I", 65);
+		Road roadAS = new Road("A-S", 78);		Road roadCB = new Road("C-B", 46);		Road roadEf6 = new Road("E-f6", 60);
+		Road roadABi = new Road("A-Bi", 25);	Road roadCL = new Road("C-L", 94);		Road roadFG = new Road("F-G", 185);
+		Road roadACe = new Road("A-Ce", 33);	Road roadCD = new Road("C-D", 25);		Road roadFCol1 = new Road("F-Col1", 105);
+		Road roadAAu = new Road("A-Au", 60);	Road roadDC = new Road("D-C", 25);		Road roadFCol2 = new Road("F-Col2", 156);	
+		Road roadBBi = new Road("B-Bi", 27);	Road roadDS = new Road("D-S", 140);		Road roadFN = new Road("F-N", 298);
+		Road roadBK = new Road("B-K", 80);		Road roadDI = new Road("D-I", 65);		
+		Road roadBI = new Road("B-I", 109);		Road roadDE = new Road("D-E", 45);		Road roadGCab = new Road("G-cab", 60);	
+		Road roadBC = new Road("B-C", 46);		Road roadED = new Road("E-D", 45);		Road roadGAu = new Road("G-Au", 140);	
+		Road roadBS = new Road("B-S", 65);		Road roadES = new Road("E-S", 125);		Road roadICen = new Road("I-Cen", 155);
+		
+		Road roadIf11 = new Road("I-f11", 25); 	
+		Road roadIJ = new Road("E-f6", 45);
+		Road roadJL = new Road("J-L", 36);
+		Road roadJCol1 = new Road("J-Col1", 115);
+		Road roadJCol2 = new Road("J-Col2", 78);
+		Road roadKL= new Road("K-L", 40);
+		Road roadKCen = new Road("K-Cen", 55);
+		Road roadKCab = new Road("K-Cab", 67);
+		Road roadLCol1 = new Road("L-Col1", 80);
+		Road roadLCol2 = new Road("L-Col2", 100);
+		Road roadMAu = new Road("M-Au", 56);
+		Road roadMCen = new Road("M-Cen", 70);
+		Road roadMS = new Road("M-S", 83);
+		Road roadNCol2 = new Road("N-Col2", 75);
 		
 		
 	}
