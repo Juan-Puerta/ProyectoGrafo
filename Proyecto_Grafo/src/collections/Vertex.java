@@ -1,7 +1,13 @@
 package collections;
 
-public class Vertex<V> {
+import java.io.Serializable;
 
+public class Vertex<V> implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3298533209027321768L;
 	private V dateV;
 	private String name;
 	

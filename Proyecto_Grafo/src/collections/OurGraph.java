@@ -1,5 +1,6 @@
 package collections;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,9 +9,12 @@ import java.util.Set;
 import collectionsQS.*;
 import collectionsPQ.*;
 
-public class OurGraph<V,A>{
+public class OurGraph<V,A> implements Serializable{
 	
-	public final static int SIZE_PQ = 100;
+
+	private static final long serialVersionUID = 3590204883367985706L;
+
+	public final static int SIZE_PQ = 10000;
 	
 	private Edge<A> adjMatrix[][];
 	private int index;

@@ -1,7 +1,11 @@
 package collections;
 
-public class Edge<A> implements Comparable<Edge<A>>{
+import java.io.Serializable;
 
+public class Edge<A> implements Comparable<Edge<A>>, Serializable{
+
+	private static final long serialVersionUID = 2386745115157664653L;
+	
 	private A dateA;
 	private int weight;
 	

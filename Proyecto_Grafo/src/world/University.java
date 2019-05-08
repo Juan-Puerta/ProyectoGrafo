@@ -18,6 +18,18 @@ public class University implements Serializable{
 		this.numBuild = numBuild;
 		conections = new OurGraph<Building, Road>(numBuild);
 	}
+	
+	public Building search(String nameBuilding) {
+		boolean found = false;
+		Building house = null;
+		for(int i = 0; i < conections.getTheArrayV().size() && !found; i++) {
+			if(conections.getTheArrayV().get(i).getNameBuilding().equalsIgnoreCase(nameBuilding)) {
+				house = conections.getTheArrayV().get(i);
+				found = true;
+			}
+		}
+		return house;
+	}
 
 	public String getName() {
 		return name;
