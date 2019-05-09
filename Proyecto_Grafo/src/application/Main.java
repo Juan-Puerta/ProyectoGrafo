@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import collections.*;
 import collectionsQS.Stack;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -21,34 +22,46 @@ public class Main extends Application {
 	
 	public Main() {
 		// TODO Auto-generated constructor stub
+		
 		theIcesiUniversity = new University("Universidad Icesi", 22);
+		
 //		addBuilding();
+		
 		if(theIcesiUniversity.getConections().getAdjMatrix()[0][1] == null) {
 			try {
 				deserialize();
-//				System.out.println("Hola");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-//		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
-//			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
-//				if(theIcesiUniversity.getConections().getAdjMatrix()[i][j] == null) {
-//					System.out.print(0+"   ");
-//				}else {
-//					if(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight() >= 100) {
-//						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+" ");
-//					}else {
-//						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+"  ");
-//					}
-//				}
-//			}
-//			System.out.println("");
-//		}
-		Stack<Building> laCosa = theIcesiUniversity.getConections().dijkstraWay(theIcesiUniversity.search("Edificio M"), theIcesiUniversity.search("Edificio N"));
+		
+		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
+			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
+				if(theIcesiUniversity.getConections().getAdjMatrix()[i][j] == null) {
+					System.out.print(0+"   ");
+				}else {
+					if(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight() >= 100) {
+						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+" ");
+					}else {
+						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+"  ");
+					}
+				}
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+		System.out.println("");
+		Stack<Building> laCosa = theIcesiUniversity.getConections().dijkstraWay(theIcesiUniversity.search("Edificio A"), theIcesiUniversity.search("Edificio F"));
 		while(!laCosa.isEmpty()) {
 			System.out.println(laCosa.pop().getNameBuilding());
+		}
+		System.out.println("");
+		System.out.println("");
+		Stack<Edge<Building, Road>> laFufa = theIcesiUniversity.getConections().prim(theIcesiUniversity.search("El saman"));
+		while(!laFufa.isEmpty()) {
+			Edge<Building, Road> aux = laFufa.pop();
+			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
 		}
 	}
 	

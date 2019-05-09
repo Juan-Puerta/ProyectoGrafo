@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import collectionsQS.*;
 import collectionsPQ.*;
 
@@ -16,7 +17,7 @@ public class OurGraph<V,A> implements Serializable{
 
 	public final static int SIZE_PQ = 10000;
 	
-	private Edge<A> adjMatrix[][];
+	private Edge<V,A> adjMatrix[][];
 	private int index;
 	private Map<V, Integer> representationV;
 	private ArrayList<V> theArrayV;
@@ -46,8 +47,8 @@ public class OurGraph<V,A> implements Serializable{
 		int i = representationV.get(vertexOne.getDateV());
 		int j = representationV.get(vertexTwo.getDateV());
 		
-		adjMatrix[i][j] = new Edge<A>(date, weight);
-		adjMatrix[j][i] = new Edge<A>(date, weight);
+		adjMatrix[i][j] = new Edge<V,A>(date, weight, from, to);
+		adjMatrix[j][i] = new Edge<V,A>(date, weight, to, from);
 	}
 	
 	private void addVertex(Vertex<V> theVertex) {
@@ -122,11 +123,63 @@ public class OurGraph<V,A> implements Serializable{
 		return distances;
 	}
 	
-	public Edge<A>[][] getAdjMatrix() {
+	public Stack<Edge<V, A>> prim(V from) {
+		
+		boolean[] visited = new boolean[adjMatrix.length];
+		PriorityQueue<Edge<V,A>> theQueue = new PriorityQueue<Edge<V,A>>(SIZE_PQ);
+		int auxVisited = 0;
+		Stack<Edge<V,A>> theReturn = new Stack<Edge<V,A>>();
+		
+		visited[representationV.get(from)] = true;
+		auxVisited++;
+		
+		for(int i = 0 ; i < adjMatrix[0].length; i++) {
+			if(adjMatrix[representationV.get(from)][i] != null) {
+				theQueue.insert(adjMatrix[representationV.get(from)][i]);
+			}
+		}
+		
+		while(auxVisited < visited.length) {
+			
+			Edge<V, A> auxEdge = theQueue.extractMin();
+//			theReturn.add(auxEdge);
+				
+			if((visited[representationV.get(auxEdge.getVertexOne())] == false) || (visited[representationV.get(auxEdge.getVertexTwo())] == false)) {
+			
+				theReturn.push(auxEdge);
+				
+				if(!visited[representationV.get(auxEdge.getVertexOne())]) {
+					
+					visited[representationV.get(auxEdge.getVertexOne())] = true;
+					auxVisited++;
+					
+					for(int i = 0 ; i < adjMatrix[0].length; i++) {
+						if(adjMatrix[representationV.get(auxEdge.getVertexOne())][i] != null) {
+							theQueue.insert(adjMatrix[representationV.get(auxEdge.getVertexOne())][i]);
+						}
+					}
+				}
+				if(!visited[representationV.get(auxEdge.getVertexTwo())]) {
+					
+					visited[representationV.get(auxEdge.getVertexTwo())] = true;
+					auxVisited++;
+					
+					for(int i = 0 ; i < adjMatrix[0].length; i++) {
+						if(adjMatrix[representationV.get(auxEdge.getVertexTwo())][i] != null) {
+							theQueue.insert(adjMatrix[representationV.get(auxEdge.getVertexTwo())][i]);
+						}
+					}
+				}
+			}
+		}
+		return theReturn;
+	}
+	
+	public Edge<V,A>[][] getAdjMatrix() {
 		return adjMatrix;
 	}
 
-	public void setAdjMatrix(Edge<A>[][] adjMatrix) {
+	public void setAdjMatrix(Edge<V,A>[][] adjMatrix) {
 		this.adjMatrix = adjMatrix;
 	}
 

@@ -2,16 +2,20 @@ package collections;
 
 import java.io.Serializable;
 
-public class Edge<A> implements Comparable<Edge<A>>, Serializable{
+public class Edge<V,A> implements Comparable<Edge<V,A>>, Serializable{
 
 	private static final long serialVersionUID = 2386745115157664653L;
 	
 	private A dateA;
 	private int weight;
+	private V vertexOne;
+	private V vertexTwo;
 	
-	public Edge(A dateA, int weight) {
+	public Edge(A dateA, int weight, V vertexOne, V vertexTwo) {
 		this.dateA = dateA;
 		this.weight = weight;
+		this.vertexOne = vertexOne;
+		this.vertexTwo = vertexTwo;
 	}
 
 	public A getDateA() {
@@ -30,8 +34,24 @@ public class Edge<A> implements Comparable<Edge<A>>, Serializable{
 		this.weight = weight;
 	}
 
+	public V getVertexOne() {
+		return vertexOne;
+	}
+
+	public void setVertexOne(V vertexOne) {
+		this.vertexOne = vertexOne;
+	}
+
+	public V getVertexTwo() {
+		return vertexTwo;
+	}
+
+	public void setVertexTwo(V vertexTwo) {
+		this.vertexTwo = vertexTwo;
+	}
+
 	@Override
-	public int compareTo(Edge<A> o) {
+	public int compareTo(Edge<V,A> o) {
 		// TODO Auto-generated method stub
 		  if (weight > o.getWeight()) {
 	            return 1;
