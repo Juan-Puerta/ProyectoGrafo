@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import collections.Edge;
 import collections.OurGraph;
 import collectionsQS.Stack;
 import world.Building;
@@ -124,33 +125,40 @@ class OurGraphTest {
 //Dijsktra
 	
 	@Test
-	void testDiksjtraStageOne() {
-		stageOne();
-		Stack<Integer> theIntegerDikjstra = theIntegerGraph.dijkstraWay(1, 3);
-		assertEquals(1, (int)theIntegerDikjstra.pop());
-		assertEquals(2, (int)theIntegerDikjstra.pop());
-		assertEquals(3, (int)theIntegerDikjstra.pop());
-		
+	void testDrikjstraStageThree() {
+		stageThree();
+		Stack<Building> theDikjstra = theUniversity.getConections().dijkstraWay(theUniversity.search("A"), theUniversity.search("C"));
+		assertEquals("A", theDikjstra.pop().getNameBuilding());
+		assertEquals("B", theDikjstra.pop().getNameBuilding());
+		assertEquals("C", theDikjstra.pop().getNameBuilding());
+	
 	}
 	
+	
+//Prim
 	@Test
-	void testDikjstratageTwo() {
-		stageTwo();
-		Stack<String> theStringDikjstra = theStringGraph.dijkstraWay("A","C");
-		assertEquals("A", (String)theStringDikjstra.pop());
-		assertEquals("B", (String)theStringDikjstra.pop());
-		assertEquals("C", (String)theStringDikjstra.pop());
+	void testPrimStageThree() {
+		stageThree();
+		Building theBuildingF = new Building("F");
+		Road theRoadDF = new Road("DF", 2);
+		theUniversity.getConections().insert(theUniversity.search("D"), theBuildingF, theRoadDF.getCost(), theRoadDF);
+		Stack<Edge<Building, Road>> thePrim = theUniversity.getConections().prim(theUniversity.search("A"));
+		System.out.println("caca");
+		while(!thePrim.isEmpty()) {
+			Edge<Building, Road> aux = thePrim.pop();
+			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
+		}
+		
+//		assertEquals(3, thePrim.pop().getWeight());
+//		assertEquals(2, thePrim.pop().getWeight());
+//		assertEquals(3, thePrim.pop().getWeight());
+		assertEquals(4, thePrim.pop().getWeight());
+	
 	}
 	
 	
-//	@Test
-//	void testDrikjstraStageThree() {
-//		stageThree();
-//		Stack<String> theUniversityDikjstra = theUniversity.
-//		assertEquals("A", theUniversity.search("A").getNameBuilding());
-//		assertEquals("E", theUniversity.search("E").getNameBuilding());
-//		
-//	}
+	
+//
 	
 
 }
