@@ -142,17 +142,14 @@ class OurGraphTest {
 		Building theBuildingF = new Building("F");
 		Road theRoadDF = new Road("DF", 2);
 		theUniversity.getConections().insert(theUniversity.search("D"), theBuildingF, theRoadDF.getCost(), theRoadDF);
-		Stack<Edge<Building, Road>> thePrim = theUniversity.getConections().prim(theUniversity.search("A"));
 		System.out.println("caca");
-		while(!thePrim.isEmpty()) {
-			Edge<Building, Road> aux = thePrim.pop();
-			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
-		}
+		Stack<Edge<Building, Road>> thePrim = theUniversity.getConections().prim(theUniversity.search("A"));
 		
-//		assertEquals(3, thePrim.pop().getWeight());
-//		assertEquals(2, thePrim.pop().getWeight());
-//		assertEquals(3, thePrim.pop().getWeight());
 		assertEquals(4, thePrim.pop().getWeight());
+		assertEquals(3, thePrim.pop().getWeight());
+		assertEquals(2, thePrim.pop().getWeight());
+		assertEquals(2, thePrim.pop().getWeight());
+		assertEquals(3, thePrim.pop().getWeight());
 	
 	}
 	
