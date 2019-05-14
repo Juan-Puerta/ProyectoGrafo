@@ -54,5 +54,13 @@ public class Queue<T> implements IQueue<T>{
 		// TODO Auto-generated method stub
 		return size;
 	}
+	
+	public boolean isEmpty() {
+		if(size == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
 }

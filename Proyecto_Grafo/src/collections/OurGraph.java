@@ -175,6 +175,60 @@ public class OurGraph<V,A> implements Serializable{
 		return theReturn;
 	}
 	
+	public ArrayList<V> bfs(V from) {
+		
+		boolean[] visited = new boolean[adjMatrix.length];
+		Queue<V> theQueue = new Queue<V>();
+		ArrayList<V> theReturn = new ArrayList<V>();
+		
+		visited[representationV.get(from)] = true;
+		theQueue.enqueue(from);
+		
+		while(!theQueue.isEmpty()) {
+			
+			V aux = theQueue.dequeue();
+			theReturn.add(aux);
+			
+			for(int i = 0; i < adjMatrix.length; i++) {
+				if(adjMatrix[representationV.get(aux)][i] != null) {
+					V anotherAux = adjMatrix[representationV.get(aux)][i].getVertexTwo();
+					if(!visited[representationV.get(anotherAux)]) {
+						theQueue.enqueue(anotherAux);
+						visited[representationV.get(anotherAux)] = true;
+					}
+				}
+			}
+		}
+		return theReturn;
+	}
+	
+	public ArrayList<V> dfs(V from) {
+		
+		boolean[] visited = new boolean[adjMatrix.length];
+		Stack<V> theStack = new Stack<V>();
+		ArrayList<V> theReturn = new ArrayList<V>();
+		
+		visited[representationV.get(from)] = true;
+		theStack.push(from);
+		
+		while(!theStack.isEmpty()) {
+			
+			V aux = theStack.pop();
+			theReturn.add(aux);
+			
+			for(int i = 0; i < adjMatrix.length; i++) {
+				if(adjMatrix[representationV.get(aux)][i] != null) {
+					V anotherAux = adjMatrix[representationV.get(aux)][i].getVertexTwo();
+					if(!visited[representationV.get(anotherAux)]) {
+						theStack.push(anotherAux);
+						visited[representationV.get(anotherAux)] = true;
+					}
+				}
+			}
+		}
+		return theReturn;
+	}
+	
 	public Edge<V,A>[][] getAdjMatrix() {
 		return adjMatrix;
 	}
