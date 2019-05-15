@@ -229,6 +229,36 @@ public class OurGraph<V,A> implements Serializable{
 		return theReturn;
 	}
 	
+	public Edge<V,A>[][] floydWarshall(Edge<V,A>[][] theMatrix) {
+		
+		Edge<V,A>[][] ultimateMatrix = new Edge[adjMatrix.length][adjMatrix[0].length];
+		
+		for(int i = 0; i < ultimateMatrix.length; i++) {
+			for(int j = 0; j < ultimateMatrix[0].length; j++) {
+				if(adjMatrix[i][j] != null) {
+					ultimateMatrix[i][j] = adjMatrix[i][j];
+				}else {
+					Edge<V, A> aux = new Edge<V, A>(null, 1000, null, null);
+					ultimateMatrix[i][j] = aux;
+				}
+			}
+		}
+		
+		for(int k = 0; k < ultimateMatrix.length; k++) {
+			for(int i = 0; i < ultimateMatrix.length; i++) {
+				for(int j = 0; j < ultimateMatrix.length; j++) {
+					if(ultimateMatrix[i][k].getWeight()+ultimateMatrix[k][j].getWeight() < ultimateMatrix[i][j].getWeight()) {
+						ultimateMatrix[i][j].setWeight(ultimateMatrix[i][k].getWeight()+ultimateMatrix[k][j].getWeight());
+					}
+					if(i == j) {
+						ultimateMatrix[i][j].setWeight(0);
+					}
+				}
+			}
+		}
+		return ultimateMatrix;
+	}
+	
 	public Edge<V,A>[][] getAdjMatrix() {
 		return adjMatrix;
 	}
