@@ -63,6 +63,22 @@ public class Main extends Application {
 			Edge<Building, Road> aux = laFufa.pop();
 			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
 		}
+		System.out.println("");
+		System.out.println("");
+		Edge<Building, Road>[][] infinito = theIcesiUniversity.getConections().floydWarshall(theIcesiUniversity.getConections().getAdjMatrix());
+		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
+			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
+				System.out.print(infinito[i][j].getWeight()+" ");
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+		System.out.println("");
+		int[][] kaka = theIcesiUniversity.getConections().dijkstra(theIcesiUniversity.search("Edificio F"));
+		for(int i = 0; i < kaka[0].length; i++) {
+			System.out.print(kaka[0][i]+" ");
+		}
+		
 	}
 	
 	public void addBuilding() {

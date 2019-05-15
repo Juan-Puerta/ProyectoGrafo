@@ -56,7 +56,7 @@ public class OurGraph<V,A> implements Serializable{
 			representationV.put(theVertex.getDateV(), index);
 			index++;
 		}else {
-			System.out.println("El vertice ya existe");
+//			System.out.println("El vertice ya existe");
 		}
 	}
 	
@@ -142,8 +142,7 @@ public class OurGraph<V,A> implements Serializable{
 		while(auxVisited < visited.length) {
 			
 			Edge<V, A> auxEdge = theQueue.extractMin();
-//			theReturn.add(auxEdge);
-				
+
 			if((visited[representationV.get(auxEdge.getVertexOne())] == false) || (visited[representationV.get(auxEdge.getVertexTwo())] == false)) {
 			
 				theReturn.push(auxEdge);

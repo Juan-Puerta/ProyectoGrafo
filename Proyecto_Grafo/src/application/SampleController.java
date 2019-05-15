@@ -62,7 +62,7 @@ public class SampleController {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("UNIVERSITY MAPS");
 		alert.setHeaderText("PROGRAMA CREADO POR: ");
-		alert.setContentText("==============="+" Camilo Castillo "+"==============="+"\n"+"==============="+" Fabian Portilla "+"==============="+"\n"+"==============="+" Juan Puertas "+"==============="+"\n"+
+		alert.setContentText("==============="+" Camilo Castillo "+"==============="+"\n"+"==============="+" Fabian Portilla  "+"==============="+"\n"+"==============="+"   Juan Puerta    "+"==============="+"\n"+
 		"Estudiantes del curso de Algortimos y Estructuras de Datos de la universidad ICESI");
 		alert.showAndWait();	
 		
