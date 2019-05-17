@@ -127,7 +127,7 @@ class OurGraphTest {
 //Dijsktra
 	
 	@Test
-	void testDrikjstraStageThree() {
+	void testDijkstraStageThree() {
 		stageThree();
 		Stack<Building> theDikjstra = theUniversity.getConections().dijkstraWay(theUniversity.search("A"), theUniversity.search("C"));
 		assertEquals("A", theDikjstra.pop().getNameBuilding());
@@ -144,7 +144,7 @@ class OurGraphTest {
 		Building theBuildingF = new Building("F");
 		Road theRoadDF = new Road("DF", 2);
 		theUniversity.getConections().insert(theUniversity.search("D"), theBuildingF, theRoadDF.getCost(), theRoadDF);
-		System.out.println("caca");
+
 		Stack<Edge<Building, Road>> thePrim = theUniversity.getConections().prim(theUniversity.search("A"));
 		
 		assertEquals(4, thePrim.pop().getWeight());
