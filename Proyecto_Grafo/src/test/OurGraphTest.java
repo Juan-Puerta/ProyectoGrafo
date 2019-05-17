@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import collections.Edge;
@@ -154,8 +156,101 @@ class OurGraphTest {
 	}
 	
 	
+//BFS
 	
-//
+	@Test
+	void testBFS_StageOne() {
+		stageOne();
+	
+		ArrayList<Integer> theIntegerBfs = theIntegerGraph.bfs(1);
+		assertEquals(1, (int)theIntegerBfs.get(0));
+		assertEquals(2, (int)theIntegerBfs.get(1));
+		assertEquals(3, (int)theIntegerBfs.get(2));
+		assertEquals(4, (int)theIntegerBfs.get(3));
+		assertEquals(5, (int)theIntegerBfs.get(4));
+	}
+	
+	
+	@Test
+	void testBFS_StageTwo() {
+		stageTwo();
+	
+		ArrayList<String> theStringBfs = theStringGraph.bfs("A");
+		assertEquals("A", theStringBfs.get(0));
+		assertEquals("B", theStringBfs.get(1));
+		assertEquals("D", theStringBfs.get(2));
+		assertEquals("C", theStringBfs.get(3));
+		assertEquals("E", theStringBfs.get(4));
+	}
+	
+	@Test
+	void testBFS_StageThre() {
+		stageThree();
+
+		ArrayList<Building> theStringBfs = theUniversity.getConections().bfs(theUniversity.search("A"));
+		assertEquals("A", theStringBfs.get(0).getNameBuilding());
+		assertEquals("B", theStringBfs.get(1).getNameBuilding());
+		assertEquals("C", theStringBfs.get(2).getNameBuilding());
+		assertEquals("D", theStringBfs.get(3).getNameBuilding());
+		assertEquals("E", theStringBfs.get(4).getNameBuilding());
+	}
+	
+
+	
+//DFS
+	
+	@Test
+	void testDFS_StageOne() {
+		stageOne();
+	
+		ArrayList<Integer> theIntegerDfs = theIntegerGraph.dfs(1);
+		assertEquals(1, (int)theIntegerDfs.get(0));
+		assertEquals(2, (int)theIntegerDfs.get(1));
+		assertEquals(4, (int)theIntegerDfs.get(2));
+		assertEquals(3, (int)theIntegerDfs.get(3));
+		assertEquals(5, (int)theIntegerDfs.get(4));
+	}
+	
+	
+	@Test
+	void testDFS_StageTwo() {
+		stageTwo();
+	
+		ArrayList<String> theStringDfs = theStringGraph.dfs("A");
+		assertEquals("A", theStringDfs.get(0));
+		assertEquals("B", theStringDfs.get(1));
+		assertEquals("D", theStringDfs.get(2));
+		assertEquals("C", theStringDfs.get(3));
+		assertEquals("E", theStringDfs.get(4));
+	}
+	
+	@Test
+	void testDFS_StageThree() {
+		stageThree();
+
+		ArrayList<Building> theStringDfs = theUniversity.getConections().dfs(theUniversity.search("A"));
+		assertEquals("A", theStringDfs.get(0).getNameBuilding());
+		assertEquals("B", theStringDfs.get(1).getNameBuilding());
+		assertEquals("D", theStringDfs.get(2).getNameBuilding());
+		assertEquals("C", theStringDfs.get(3).getNameBuilding());
+		assertEquals("E", theStringDfs.get(4).getNameBuilding());
+		
+	}
+	
+	@Test
+	void testFloydStageThree() {
+		stageThree();
+		int[] array1 = {0,3,6,5,10}; 
+		int[] array2 = {3,0,3,2,7}; 
+		int[] array3 = {6,3,0,5,4}; 
+		int[] array4 = {5,2,5,0,10}; 
+		int[] array5 = {10,7,4,10,8}; 
+		
+		Edge<Building, Road>[][] matrix = theUniversity.getConections().floydWarshall(theUniversity.getConections().getAdjMatrix());
+		
+		
+	}
+	
 	
 
 }
