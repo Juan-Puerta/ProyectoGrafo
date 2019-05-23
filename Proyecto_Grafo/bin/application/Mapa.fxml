@@ -1,8 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="500.0" maxWidth="500.0" minHeight="700.0" minWidth="700.0" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="797.0" fitWidth="790.0" layoutX="-6.0" layoutY="-90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/cesped.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="134.0" layoutX="20.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="74.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="95.0" layoutX="286.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="134.0" layoutX="208.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="6.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="111.0" layoutY="240.0" text="B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="235.0" text="SAMAN">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="243.0" layoutY="521.0" text="I">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="95.0" layoutX="173.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="83.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="163.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="83.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="158.0" layoutY="133.0" text="A">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="158.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="98.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="162.0" layoutY="43.0" text="M">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="189.0" layoutY="241.0" text="BIBLIOTECA">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="74.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="154.0" layoutY="358.0" text="C">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="519.0" text="E">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="95.0" layoutX="300.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="95.0" layoutX="268.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="275.0" layoutY="43.0" text="AUDITORIOS">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="132.0" text="CENTRAL">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="326.0" layoutY="303.0" prefHeight="19.0" prefWidth="5.0" text="L">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="504.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="427.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="504.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="427.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="497.0" layoutY="119.0" text="G">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="536.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="457.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="528.0" layoutY="620.0" text="N">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="74.0" fitWidth="95.0" layoutX="591.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="526.0" layoutY="277.0" text="F">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="635.0" layoutY="255.0" prefHeight="19.0" prefWidth="5.0" text="F">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="302.0" layoutY="444.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="330.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="330.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="168.0" fitWidth="195.0" layoutX="414.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="475.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="468.0" layoutY="277.0" text="COLISEO 1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="498.0" layoutY="521.0" text="COLISEO 2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="20.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="95.0" layoutX="139.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="95.0" layoutX="230.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="601.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../../imgs/techo%20edificio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="164.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="84.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imgs/edificio%20tipo%20B.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="160.0" layoutY="434.0" text="D">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
-
