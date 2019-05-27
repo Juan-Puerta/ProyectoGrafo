@@ -44,7 +44,7 @@ public class TourController {
 	}
 	
 	public void calcular() {
-		System.out.println(salida.getValue());
+		String inicio = salida.getValue();
 	}
 	
 	public void salir(Event event) {

@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import collectionsQS.Stack;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+import world.Building;
 
 public class MapaController {
 
@@ -19,7 +21,7 @@ public class MapaController {
 	@FXML private Button calcular;
 	@FXML private Button salir;
 	
-	
+	public static Main main;
 	
 	public void initialize() {
 		añadirInformacion();
@@ -63,19 +65,22 @@ public class MapaController {
 		llegada.getItems().add("Edificio L");
 		llegada.getItems().add("Edificio M");
 		llegada.getItems().add("Edificio N");
-		llegada.getItems().add("Edificio SAMÁN");
-		llegada.getItems().add("Edificio AUDITORIOS");
-		llegada.getItems().add("Edificio CENTRAL");
-		llegada.getItems().add("Edificio BIBLIOTECA");
-		llegada.getItems().add("Edificio CABALLERIZA");
-		llegada.getItems().add("Edificio CANCHA 7");
-		llegada.getItems().add("Edificio CANCHA 11");
-		llegada.getItems().add("Edificio COLISEO 1");
-		llegada.getItems().add("Edificio COLISEO 2");
+		llegada.getItems().add("SAMÁN");
+		llegada.getItems().add("AUDITORIOS");
+		llegada.getItems().add("CENTRAL");
+		llegada.getItems().add("BIBLIOTECA");
+		llegada.getItems().add("CABALLERIZA");
+		llegada.getItems().add("CANCHA 7");
+		llegada.getItems().add("CANCHA 11");
+		llegada.getItems().add("COLISEO 1");
+		llegada.getItems().add("COLISEO 2");
 	}
 
 	public void calcular() {
-		
+		Stack<Building> pila = main.getTheIcesiUniversity().getConections().dijkstraWay(main.getTheIcesiUniversity().search(salida.getValue()),(main.getTheIcesiUniversity().search(llegada.getValue())));
+		while(!pila.isEmpty()) {
+			System.out.println(pila.pop().getNameBuilding());
+		}
 	}
 	
 	public void salir(Event event) {

@@ -83,16 +83,16 @@ public class Main extends Application {
 	
 	public void addBuilding() {
 		
-		Building buildingA = new Building("Edificio A");	Building buildingN = new Building("Edificio N");	Building bCol1 = new Building("Coliseo 1");
-		Building buildingB = new Building("Edificio B");	Building buildingL = new Building("Edificio L");	Building bCol2 = new Building("Coliseo 2");
+		Building buildingA = new Building("Edificio A");	Building buildingN = new Building("Edificio N");	Building bCol1 = new Building("COLISEO 1");
+		Building buildingB = new Building("Edificio B");	Building buildingL = new Building("Edificio L");	Building bCol2 = new Building("COLISEO 2");
 		Building buildingC = new Building("Edificio C");	Building buildingK = new Building("Edificio K");
-		Building buildingD = new Building("Edificio D");	Building bSaman = new Building("El saman");
-		Building buildingE = new Building("Edificio E");	Building bLibrary = new Building("Biblioteca");	
-		Building buildingF = new Building("Edificio F");	Building bSoccerSix = new Building("Cancha futbol 6");
-		Building buildingG = new Building("Edificio G");	Building bAudi = new Building("Auditorios");
-		Building buildingI = new Building("Edificio I");	Building bCentral= new Building("Cafeteria Central");
-		Building buildingJ = new Building("Edificio J");	Building bSoccerEleven = new Building("Cancha futbol once");
-		Building buildingM = new Building("Edificio M");	Building bCaba = new Building("Caballerisas");
+		Building buildingD = new Building("Edificio D");	Building bSaman = new Building("SAMAN");
+		Building buildingE = new Building("Edificio E");	Building bLibrary = new Building("BIBLIOTECA");	
+		Building buildingF = new Building("Edificio F");	Building bSoccerSix = new Building("CANCHA 7");
+		Building buildingG = new Building("Edificio G");	Building bAudi = new Building("AUDITORIOS");
+		Building buildingI = new Building("Edificio I");	Building bCentral= new Building("CENTRAL");
+		Building buildingJ = new Building("Edificio J");	Building bSoccerEleven = new Building("CANCHA 11");
+		Building buildingM = new Building("Edificio M");	Building bCaba = new Building("CABALLERIZA");
 	
 		Road roadAM = new Road("A-M", 65);		Road roadCS = new Road("C-S", 120);		Road roadEI = new Road("E-I", 65);
 		Road roadAS = new Road("A-S", 78);		Road roadEf6 = new Road("E-f6", 60);
@@ -229,6 +229,15 @@ public class Main extends Application {
 		}
 	}
 	
+	
+	public University getTheIcesiUniversity() {
+		return theIcesiUniversity;
+	}
+
+	public void setTheIcesiUniversity(University theIcesiUniversity) {
+		this.theIcesiUniversity = theIcesiUniversity;
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}
