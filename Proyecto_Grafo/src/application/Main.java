@@ -18,7 +18,7 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	
-	private University theIcesiUniversity;
+	private static University theIcesiUniversity;
 	
 	public Main() {
 		// TODO Auto-generated constructor stub
@@ -230,7 +230,7 @@ public class Main extends Application {
 	}
 	
 	
-	public University getTheIcesiUniversity() {
+	public static University getTheIcesiUniversity() {
 		return theIcesiUniversity;
 	}
 

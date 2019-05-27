@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import world.Building;
+import world.University;
 
 public class MapaController {
 
@@ -65,7 +66,7 @@ public class MapaController {
 		llegada.getItems().add("Edificio L");
 		llegada.getItems().add("Edificio M");
 		llegada.getItems().add("Edificio N");
-		llegada.getItems().add("SAMÁN");
+		llegada.getItems().add("SAMAN");
 		llegada.getItems().add("AUDITORIOS");
 		llegada.getItems().add("CENTRAL");
 		llegada.getItems().add("BIBLIOTECA");
@@ -77,7 +78,8 @@ public class MapaController {
 	}
 
 	public void calcular() {
-		Stack<Building> pila = main.getTheIcesiUniversity().getConections().dijkstraWay(main.getTheIcesiUniversity().search(salida.getValue()),(main.getTheIcesiUniversity().search(llegada.getValue())));
+		University icesi = main.getTheIcesiUniversity();
+		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
 		while(!pila.isEmpty()) {
 			System.out.println(pila.pop().getNameBuilding());
 		}
