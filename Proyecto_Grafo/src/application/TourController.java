@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import collections.Edge;
+import collectionsQS.Stack;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,12 +13,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+import world.Building;
+import world.Road;
+import world.University;
 
 public class TourController {
 
 	@FXML private ChoiceBox<String> salida;
 	@FXML private Button calcular;
 	@FXML private Button salir;
+	
+	public static Main main;
 	
 	public void initialize() {
 		salida.getItems().add("Edificio A");
@@ -44,7 +51,12 @@ public class TourController {
 	}
 	
 	public void calcular() {
-		
+		University icesi = main.getTheIcesiUniversity();
+		Stack<Edge<Building, Road>> ruta = icesi.getConections().prim(icesi.search(salida.getValue()));
+		while(!ruta.isEmpty()) {
+			Edge<Building, Road> aux = ruta.pop();
+			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
+		}
 	}
 	
 	public void salir(Event event) {
