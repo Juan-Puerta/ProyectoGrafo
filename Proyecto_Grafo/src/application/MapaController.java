@@ -19,10 +19,61 @@ public class MapaController {
 	@FXML private Button calcular;
 	@FXML private Button salir;
 	
+	
+	
 	public void initialize() {
+		añadirInformacion();
 		
 	}
 	
+	public void añadirInformacion() {
+		salida.getItems().add("Edificio A");
+		salida.getItems().add("Edificio B");
+		salida.getItems().add("Edificio C");
+		salida.getItems().add("Edificio D");
+		salida.getItems().add("Edificio E");
+		salida.getItems().add("Edificio F");
+		salida.getItems().add("Edificio G");
+		salida.getItems().add("Edificio I");
+		salida.getItems().add("Edificio J");
+		salida.getItems().add("Edificio K");
+		salida.getItems().add("Edificio L");
+		salida.getItems().add("Edificio M");
+		salida.getItems().add("Edificio N");
+		salida.getItems().add("Edificio SAMÁN");
+		salida.getItems().add("Edificio AUDITORIOS");
+		salida.getItems().add("Edificio CENTRAL");
+		salida.getItems().add("Edificio BIBLIOTECA");
+		salida.getItems().add("Edificio CABALLERIZA");
+		salida.getItems().add("Edificio CANCHA 7");
+		salida.getItems().add("Edificio CANCHA 11");
+		salida.getItems().add("Edificio COLISEO 1");
+		salida.getItems().add("Edificio COLISEO 2");
+		
+		llegada.getItems().add("Edificio A");
+		llegada.getItems().add("Edificio B");
+		llegada.getItems().add("Edificio C");
+		llegada.getItems().add("Edificio D");
+		llegada.getItems().add("Edificio E");
+		llegada.getItems().add("Edificio F");
+		llegada.getItems().add("Edificio G");
+		llegada.getItems().add("Edificio I");
+		llegada.getItems().add("Edificio J");
+		llegada.getItems().add("Edificio K");
+		llegada.getItems().add("Edificio L");
+		llegada.getItems().add("Edificio M");
+		llegada.getItems().add("Edificio N");
+		llegada.getItems().add("Edificio SAMÁN");
+		llegada.getItems().add("Edificio AUDITORIOS");
+		llegada.getItems().add("Edificio CENTRAL");
+		llegada.getItems().add("Edificio BIBLIOTECA");
+		llegada.getItems().add("Edificio CABALLERIZA");
+		llegada.getItems().add("Edificio CANCHA 7");
+		llegada.getItems().add("Edificio CANCHA 11");
+		llegada.getItems().add("Edificio COLISEO 1");
+		llegada.getItems().add("Edificio COLISEO 2");
+	}
+
 	public void calcular() {
 		
 	}
