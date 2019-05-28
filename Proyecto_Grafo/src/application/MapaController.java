@@ -1,6 +1,12 @@
 package application;
 
+import java.awt.Dimension;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import org.junit.experimental.theories.FromDataPoints;
+
+import com.sun.javafx.tk.Toolkit;
 
 import collectionsQS.Stack;
 import javafx.event.Event;
@@ -9,8 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import world.Building;
 import world.University;
@@ -21,14 +31,17 @@ public class MapaController {
 	@FXML private ChoiceBox<String> llegada;
 	@FXML private Button calcular;
 	@FXML private Button salir;
+;
 	
+	public ArrayList<ImageView> edificios;
 	public static Main main;
 	
 	public void initialize() {
 		añadirInformacion();
-		
+	
 	}
 	
+
 	public void añadirInformacion() {
 		salida.getItems().add("Edificio A");
 		salida.getItems().add("Edificio B");
@@ -43,15 +56,15 @@ public class MapaController {
 		salida.getItems().add("Edificio L");
 		salida.getItems().add("Edificio M");
 		salida.getItems().add("Edificio N");
-		salida.getItems().add("Edificio SAMÁN");
-		salida.getItems().add("Edificio AUDITORIOS");
-		salida.getItems().add("Edificio CENTRAL");
-		salida.getItems().add("Edificio BIBLIOTECA");
-		salida.getItems().add("Edificio CABALLERIZA");
-		salida.getItems().add("Edificio CANCHA 7");
-		salida.getItems().add("Edificio CANCHA 11");
-		salida.getItems().add("Edificio COLISEO 1");
-		salida.getItems().add("Edificio COLISEO 2");
+		salida.getItems().add("SAMÁN");
+		salida.getItems().add("AUDITORIOS");
+		salida.getItems().add("CENTRAL");
+		salida.getItems().add("BIBLIOTECA");
+		salida.getItems().add("CABALLERIZA");
+		salida.getItems().add("CANCHA 7");
+		salida.getItems().add("CANCHA 11");
+		salida.getItems().add("COLISEO 1");
+		salida.getItems().add("COLISEO 2");
 		
 		llegada.getItems().add("Edificio A");
 		llegada.getItems().add("Edificio B");
@@ -79,10 +92,30 @@ public class MapaController {
 
 	public void calcular() {
 		University icesi = main.getTheIcesiUniversity();
-		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
-		while(!pila.isEmpty()) {
-			System.out.println(pila.pop().getNameBuilding());
+		int[][] distancias = icesi.getConections().dijkstra(icesi.search(salida.getValue()));
+		for (int i = 0; i < distancias.length; i++) {
+			for (int j = 0; j < distancias[i].length; j++) {
+				System.out.print(distancias[i][j]+" ");
+			}
+			System.out.println("");
 		}
+	
+		
+		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
+		String subtitulo = "Usted se encuentra en: "+salida.getValue()+" y desea dirigirse a: "+llegada.getValue();
+		pila.pop();
+		String mensaje = "";
+		int i = 1;
+		while(!pila.isEmpty()) {
+			mensaje += (i)+". Diríjase a: "+pila.pop().getNameBuilding()+"\n";
+			i++;
+		}
+		
+		Alert alerta = new Alert(AlertType.INFORMATION);
+		alerta.setTitle("INFORMACIÓN");
+		alerta.setHeaderText(subtitulo);
+		alerta.setContentText(mensaje);
+		alerta.showAndWait();
 	}
 	
 	public void salir(Event event) {
