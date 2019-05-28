@@ -237,17 +237,64 @@ class OurGraphTest {
 		
 	}
 	
+	//Floyd-Warshall
 	@Test
 	void testFloydStageThree() {
 		stageThree();
-		int[] array1 = {0,3,6,5,10}; 
-		int[] array2 = {3,0,3,2,7}; 
-		int[] array3 = {6,3,0,5,4}; 
-		int[] array4 = {5,2,5,0,10}; 
-		int[] array5 = {10,7,4,10,8}; 
+		int[] array1 = {0,3,6,5,10,-1}; 
+		int[] array2 = {3,0,3,2,7,-1}; 
+		int[] array3 = {6,3,0,5,4,-1}; 
+		int[] array4 = {5,2,5,0,9,-1}; 
+		int[] array5 = {10,7,4,9,0,-1}; 
+		int[] array6 = {-1,-1,-1,-1,-1,0}; 
 		
 		Edge<Building, Road>[][] matrix = theUniversity.getConections().floydWarshall(theUniversity.getConections().getAdjMatrix());
+		for(int i = 0; i < matrix.length; i++) {
+			for(int j = 0; j < matrix[i].length; j++) {
+				if(matrix[i][j].getWeight() == 10000) {
+					matrix[i][j].setWeight(-1);
+				}
+				if(i == 0) {
+					assertEquals(array1[j], matrix[i][j].getWeight());
+				}else if(i == 1) {
+					assertEquals(array2[j], matrix[i][j].getWeight());
+				}else if(i == 2) {
+					assertEquals(array3[j], matrix[i][j].getWeight());
+				}else if(i == 3) {
+					assertEquals(array4[j], matrix[i][j].getWeight());
+				}else if(i == 4) {
+					assertEquals(array5[j], matrix[i][j].getWeight());
+				}else {
+					assertEquals(array6[j], matrix[i][j].getWeight());
+				}
+			}
+		}
 		
+	}
+	
+	//Kruskal
+	@Test
+	void testKruskal() {
+		stageThree();
+		
+		ArrayList<Edge<Building, Road>> theSomething = theUniversity.getConections().kruskal();
+		
+		for(int i = 0; i < theSomething.size(); i++) {
+			if(i == 0) {
+				assertEquals("B", theSomething.get(i).getVertexOne().getNameBuilding());
+				assertEquals("D", theSomething.get(i).getVertexTwo().getNameBuilding());
+			}else if(i == 1) {
+				assertEquals("A", theSomething.get(i).getVertexOne().getNameBuilding());
+				assertEquals("B", theSomething.get(i).getVertexTwo().getNameBuilding());
+			}else if(i == 2) {
+				assertEquals("C", theSomething.get(i).getVertexOne().getNameBuilding());
+				assertEquals("B", theSomething.get(i).getVertexTwo().getNameBuilding());
+			}else {
+				assertEquals("C", theSomething.get(i).getVertexOne().getNameBuilding());
+				assertEquals("E", theSomething.get(i).getVertexTwo().getNameBuilding());
+			}
+			
+		}
 		
 	}
 	

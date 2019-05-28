@@ -237,7 +237,7 @@ public class OurGraph<V,A> implements Serializable{
 				if(adjMatrix[i][j] != null) {
 					ultimateMatrix[i][j] = adjMatrix[i][j];
 				}else {
-					Edge<V, A> aux = new Edge<V, A>(null, 1000, null, null);
+					Edge<V, A> aux = new Edge<V, A>(null, SIZE_PQ, null, null);
 					ultimateMatrix[i][j] = aux;
 				}
 			}
@@ -257,6 +257,61 @@ public class OurGraph<V,A> implements Serializable{
 		}
 		return ultimateMatrix;
 	}
+	
+public ArrayList<Edge<V,A>> kruskal() {
+		
+		PriorityQueue<Edge<V,A>> theQueue = new PriorityQueue<Edge<V,A>>(SIZE_PQ);
+		for(int i = 0; i < adjMatrix.length; i++) {
+			for(int j = 0; j < adjMatrix[0].length; j++) {
+				if(adjMatrix[i][j] != null) {
+					theQueue.insert(adjMatrix[i][j]);
+				}
+			}
+		}
+		
+		int [] parent = new int[adjMatrix.length];
+		makeSet(parent);
+		
+		ArrayList<Edge<V,A>> theArray = new ArrayList<Edge<V,A>>();
+		
+		while(!theQueue.isEmpty()) {
+			
+			Edge<V, A> aux = theQueue.extractMin();
+			int x = find(parent, representationV.get(aux.getVertexOne()));
+			int y = find(parent, representationV.get(aux.getVertexTwo()));
+		
+			if(x == y) {
+			}else {
+				theArray.add(aux);
+				union(parent, x, y);
+			}
+			
+		}
+		return theArray;
+	}
+	
+	 public void makeSet(int[] parent){
+         for (int i = 0; i < parent.length ; i++) {
+             parent[i] = i;
+         }
+     }
+	
+	 public int find(int[] parent, int vertex) {
+		 if(parent[vertex] != vertex) {
+			 return find(parent, parent[vertex]);
+		 }else {
+			 return vertex;
+		 }
+	 }
+	 
+	 public void union(int[] parent, int x, int y) {
+		 
+		 int newX = find(parent, x);
+		 int newY = find(parent, y);
+		 
+		 parent[newY] = newX;
+		 
+	 }
 	
 	public Edge<V,A>[][] getAdjMatrix() {
 		return adjMatrix;
