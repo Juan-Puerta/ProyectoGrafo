@@ -139,7 +139,7 @@ public class MapaController {
 	public void calcular() {
 		University icesi = main.getTheIcesiUniversity();
 		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
-		Stack<Building> pila2 = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
+//		Stack<Building> pila2 = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
 		
 		
 		
