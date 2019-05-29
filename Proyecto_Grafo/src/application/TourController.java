@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import collections.Edge;
 import collectionsQS.Stack;
@@ -10,8 +11,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import world.Building;
 import world.Road;
@@ -53,10 +56,30 @@ public class TourController {
 	public void calcular() {
 		University icesi = main.getTheIcesiUniversity();
 		Stack<Edge<Building, Road>> ruta = icesi.getConections().prim(icesi.search(salida.getValue()));
+		ArrayList<Edge> caminos = new ArrayList<Edge>();
+		String subtitulo = "Usted se encuentra en: "+salida.getValue();
+		String mensaje = "";
 		while(!ruta.isEmpty()) {
-			Edge<Building, Road> aux = ruta.pop();
-			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
+			caminos.add(ruta.pop());
 		}
+		int j = 1;
+		int sumatoria = 0;
+		for (int i = caminos.size()-1; i>0; i--) {
+			Edge<Building, Road> aux = caminos.get(i);
+			sumatoria += aux.getWeight();
+			mensaje +=j+". ["+aux.getVertexOne().getNameBuilding()+"]-->["+aux.getVertexTwo().getNameBuilding()+"]  DISTANCIA: "+aux.getWeight()+" metros."+"\n";
+			j++;
+		}
+		mensaje += "----------------------------------------------------------------------"+"\n";
+		mensaje += " TOTAL: "+sumatoria+" metros."+"\n";
+		System.out.println(mensaje);
+		Alert alerta = new Alert(AlertType.INFORMATION);
+		alerta.setResizable(true);
+		alerta.setTitle("INFORMACIÓN");
+		alerta.setWidth(900);
+		alerta.setHeaderText(subtitulo);
+		alerta.setContentText(mensaje);
+		alerta.showAndWait();
 	}
 	
 	public void salir(Event event) {

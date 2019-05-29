@@ -293,6 +293,6 @@
          </font>
       </Label>
       <Line accessibleText="CANCHA7-CANCHA11" endX="14.0" endY="477.0" layoutX="129.0" layoutY="163.0" startX="-41.0" startY="477.0" />
-      <Line accessibleText="cancha11-coliseo2" endX="169.0" endY="-70.0" layoutX="311.0" layoutY="610.0" startX="-56.0" startY="35.0" />
+      <Line endX="169.0" endY="-70.0" layoutX="311.0" layoutY="610.0" startX="-56.0" startY="35.0" />
    </children>
 </AnchorPane>
