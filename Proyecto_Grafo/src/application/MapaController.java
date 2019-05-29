@@ -139,6 +139,7 @@ public class MapaController {
 	public void calcular() {
 		University icesi = main.getTheIcesiUniversity();
 		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
+		Stack<Building> pila2 = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
 		
 		
 		
@@ -146,11 +147,11 @@ public class MapaController {
 		String mensaje = "";
 		int i = 1;
 		while(!pila.isEmpty()) {
+//			validar(pila2);
 			mensaje += (i)+". Diríjase a: "+pila.pop().getNameBuilding()+"\n";
 			i++;
-			validar(pila);
+//			validar(pila2);
 		}
-		
 		Alert alerta = new Alert(AlertType.INFORMATION);
 		alerta.setTitle("INFORMACIÓN");
 		alerta.setHeaderText(subtitulo);
@@ -159,221 +160,224 @@ public class MapaController {
 	}
 	
 	public void validar(Stack<Building> edificios) {
-		if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio A")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
-				a_m.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				a_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
-				a_auditorios.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				a_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Biblioteca")) {
-				a_biblioteca.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				b_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Biblioteca")) {
-				b_biblioteca.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
-				b_k.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
-				b_c.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-				b_i1.setVisible(true);
-				b_i2.setVisible(true);	
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio C")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("saman")) {
-				c_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
-				c_d.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-				c_l.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-				b_c.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio D")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				d_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
-				d_e.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-				d_i.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
-				c_d.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio E")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				e_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-				e_i.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 7")) {
-				e_cancha7.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 7")) {
-				d_e.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio F")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
-				f_g.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
-				f_coliseo1.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				f_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio N")) {
-				f_n.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio G")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
-				g_auditorios.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
-				g_caballeriza.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				i_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
-				i_j.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 11")) {
-				i_cancha11.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
-				d_i.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
-				e_i.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-				b_i1.setVisible(true);
-				b_i2.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio J")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-				j_l.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
-				j_coliseo1.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				j_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-				i_j.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio K")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				k_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-				k_l.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
-				k_caballeriza.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-				b_k.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
-				l_coliseo1.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				l_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
-				c_l.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
-				j_l.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
-				k_l.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio M")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				m_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				m_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
-				m_auditorios.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
-				a_m.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Edificio N")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				n_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
-				f_n.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Saman")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 7")) {
-				saman_cancha7.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
-				a_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-				b_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
-				c_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
-				d_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
-				e_saman.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
-				m_saman.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Biblioteca")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				biblioteca_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
-				a_biblioteca.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
-				b_biblioteca.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Auditorios")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cafeteria Central")) {
-				auditorios_central.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
-				a_auditorios.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
-				g_auditorios.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
-				m_auditorios.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				coliseo1_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
-				coliseo1_caballeriza.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
-				j_coliseo1.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-				l_coliseo1.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
-				f_coliseo1.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 11")) {
-				coliseo2_cancha11.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
-				f_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
-				l_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
-				j_coliseo2.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio N")) {
-				n_coliseo2.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Cancha 7")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 11")) {
-				cancha7_cancha11.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
-				e_cancha7.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
-				saman_cancha7.setVisible(true);
-			}
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Cancha 11")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 7")) {
-				cancha7_cancha11.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
-				i_cancha11.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
-				coliseo2_cancha11.setVisible(true);
-			}	
-		}else if(edificios.pop().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
-			if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
-				g_caballeriza.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
-				k_caballeriza.setVisible(true);
-			}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
-				coliseo1_caballeriza.setVisible(true);
+		Building laCosa = edificios.pop();
+		if(edificios.peek() != null) {
+			if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio A")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
+					a_m.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					a_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
+					a_auditorios.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					a_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Biblioteca")) {
+					a_biblioteca.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio B")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					b_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Biblioteca")) {
+					b_biblioteca.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
+					b_k.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
+					b_c.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
+					b_i1.setVisible(true);
+					b_i2.setVisible(true);	
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio C")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("saman")) {
+					c_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
+					c_d.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
+					c_l.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
+					b_c.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio D")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					d_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
+					d_e.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
+					d_i.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
+					c_d.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio E")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					e_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
+					e_i.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("CANCHA 7")) {
+					e_cancha7.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha de Futbol 7")) {
+					d_e.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio F")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
+					f_g.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
+					f_coliseo1.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					f_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio N")) {
+					f_n.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio G")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
+					g_auditorios.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
+					g_caballeriza.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio I")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					i_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
+					i_j.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("CANCHA 11")) {
+					i_cancha11.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
+					d_i.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
+					e_i.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
+					b_i1.setVisible(true);
+					b_i2.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio J")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
+					j_l.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
+					j_coliseo1.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					j_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
+					i_j.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio K")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					k_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
+					k_l.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
+					k_caballeriza.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
+					b_k.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio L")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
+					l_coliseo1.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					l_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
+					c_l.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
+					j_l.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
+					k_l.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio M")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					m_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					m_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Auditorios")) {
+					m_auditorios.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
+					a_m.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Edificio N")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					n_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
+					f_n.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Saman")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("CANCHA 7")) {
+					saman_cancha7.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
+					a_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
+					b_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio C")) {
+					c_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio D")) {
+					d_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
+					e_saman.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
+					m_saman.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Biblioteca")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					biblioteca_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
+					a_biblioteca.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio B")) {
+					b_biblioteca.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Auditorios")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Central")) {
+					auditorios_central.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio A")) {
+					a_auditorios.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
+					g_auditorios.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio M")) {
+					m_auditorios.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					coliseo1_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Caballeriza")) {
+					coliseo1_caballeriza.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
+					j_coliseo1.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
+					l_coliseo1.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
+					f_coliseo1.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("CANCHA 11")) {
+					coliseo2_cancha11.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio F")) {
+					f_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio L")) {
+					l_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio J")) {
+					j_coliseo2.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio N")) {
+					n_coliseo2.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Cancha 7")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha 11")) {
+					cancha7_cancha11.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio E")) {
+					e_cancha7.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Saman")) {
+					saman_cancha7.setVisible(true);
+				}
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Cancha 11")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Cancha 7")) {
+					cancha7_cancha11.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio I")) {
+					i_cancha11.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 2")) {
+					coliseo2_cancha11.setVisible(true);
+				}	
+			}else if(laCosa.getNameBuilding().equalsIgnoreCase("Caballeriza")) {
+				if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio G")) {
+					g_caballeriza.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Edificio K")) {
+					k_caballeriza.setVisible(true);
+				}else if(edificios.peek().getNameBuilding().equalsIgnoreCase("Coliseo 1")) {
+					coliseo1_caballeriza.setVisible(true);
+				}
 			}
 		}
 	}

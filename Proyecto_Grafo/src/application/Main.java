@@ -36,48 +36,48 @@ public class Main extends Application {
 			}
 		}
 		
-		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
-			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
-				if(theIcesiUniversity.getConections().getAdjMatrix()[i][j] == null) {
-					System.out.print(0+"   ");
-				}else {
-					if(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight() >= 100) {
-						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+" ");
-					}else {
-						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+"  ");
-					}
-				}
-			}
-			System.out.println("");
-		}
-		System.out.println("");
-		System.out.println("");
-		Stack<Building> laCosa = theIcesiUniversity.getConections().dijkstraWay(theIcesiUniversity.search("Edificio A"), theIcesiUniversity.search("Edificio F"));
-		while(!laCosa.isEmpty()) {
-			System.out.println(laCosa.pop().getNameBuilding());
-		}
-		System.out.println("");
-		System.out.println("");
-		Stack<Edge<Building, Road>> laFufa = theIcesiUniversity.getConections().prim(theIcesiUniversity.search("SAMAN"));
-		while(!laFufa.isEmpty()) {
-			Edge<Building, Road> aux = laFufa.pop();
-			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
-		}
-		System.out.println("");
-		System.out.println("");
-		Edge<Building, Road>[][] infinito = theIcesiUniversity.getConections().floydWarshall(theIcesiUniversity.getConections().getAdjMatrix());
-		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
-			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
-				System.out.print(infinito[i][j].getWeight()+" ");
-			}
-			System.out.println("");
-		}
-		System.out.println("");
-		System.out.println("");
-		int[][] kaka = theIcesiUniversity.getConections().dijkstra(theIcesiUniversity.search("Edificio F"));
-		for(int i = 0; i < kaka[0].length; i++) {
-			System.out.print(kaka[0][i]+" ");
-		}
+//		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
+//			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
+//				if(theIcesiUniversity.getConections().getAdjMatrix()[i][j] == null) {
+//					System.out.print(0+"   ");
+//				}else {
+//					if(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight() >= 100) {
+//						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+" ");
+//					}else {
+//						System.out.print(theIcesiUniversity.getConections().getAdjMatrix()[i][j].getWeight()+"  ");
+//					}
+//				}
+//			}
+//			System.out.println("");
+//		}
+//		System.out.println("");
+//		System.out.println("");
+//		Stack<Building> laCosa = theIcesiUniversity.getConections().dijkstraWay(theIcesiUniversity.search("Edificio A"), theIcesiUniversity.search("Edificio F"));
+//		while(!laCosa.isEmpty()) {
+//			System.out.println(laCosa.pop().getNameBuilding());
+//		}
+//		System.out.println("");
+//		System.out.println("");
+//		Stack<Edge<Building, Road>> laFufa = theIcesiUniversity.getConections().prim(theIcesiUniversity.search("SAMAN"));
+//		while(!laFufa.isEmpty()) {
+//			Edge<Building, Road> aux = laFufa.pop();
+//			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
+//		}
+//		System.out.println("");
+//		System.out.println("");
+//		Edge<Building, Road>[][] infinito = theIcesiUniversity.getConections().floydWarshall(theIcesiUniversity.getConections().getAdjMatrix());
+//		for(int i = 0; i < theIcesiUniversity.getConections().getAdjMatrix().length; i++) {
+//			for(int j = 0; j < theIcesiUniversity.getConections().getAdjMatrix()[0].length; j++) {
+//				System.out.print(infinito[i][j].getWeight()+" ");
+//			}
+//			System.out.println("");
+//		}
+//		System.out.println("");
+//		System.out.println("");
+//		int[][] kaka = theIcesiUniversity.getConections().dijkstra(theIcesiUniversity.search("Edificio F"));
+//		for(int i = 0; i < kaka[0].length; i++) {
+//			System.out.print(kaka[0][i]+" ");
+//		}
 		
 	}
 	
