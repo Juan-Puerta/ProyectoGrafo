@@ -42,15 +42,15 @@ public class TourController {
 		salida.getItems().add("Edificio L");
 		salida.getItems().add("Edificio M");
 		salida.getItems().add("Edificio N");
-		salida.getItems().add("Edificio SAMÁN");
-		salida.getItems().add("Edificio AUDITORIOS");
-		salida.getItems().add("Edificio CENTRAL");
-		salida.getItems().add("Edificio BIBLIOTECA");
-		salida.getItems().add("Edificio CABALLERIZA");
-		salida.getItems().add("Edificio CANCHA 7");
-		salida.getItems().add("Edificio CANCHA 11");
-		salida.getItems().add("Edificio COLISEO 1");
-		salida.getItems().add("Edificio COLISEO 2");
+		salida.getItems().add("SAMAN");
+		salida.getItems().add("AUDITORIOS");
+		salida.getItems().add("CENTRAL");
+		salida.getItems().add("BIBLIOTECA");
+		salida.getItems().add("CABALLERIZA");
+		salida.getItems().add("CANCHA 7");
+		salida.getItems().add("CANCHA 11");
+		salida.getItems().add("COLISEO 1");
+		salida.getItems().add("COLISEO 2");
 	}
 	
 	public void calcular() {

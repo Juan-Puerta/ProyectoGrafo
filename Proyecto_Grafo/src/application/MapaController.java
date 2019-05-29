@@ -56,7 +56,7 @@ public class MapaController {
 		salida.getItems().add("Edificio L");
 		salida.getItems().add("Edificio M");
 		salida.getItems().add("Edificio N");
-		salida.getItems().add("SAMÁN");
+		salida.getItems().add("SAMAN");
 		salida.getItems().add("AUDITORIOS");
 		salida.getItems().add("CENTRAL");
 		salida.getItems().add("BIBLIOTECA");
@@ -92,18 +92,18 @@ public class MapaController {
 
 	public void calcular() {
 		University icesi = main.getTheIcesiUniversity();
-		int[][] distancias = icesi.getConections().dijkstra(icesi.search(salida.getValue()));
-		for (int i = 0; i < distancias.length; i++) {
-			for (int j = 0; j < distancias[i].length; j++) {
-				System.out.print(distancias[i][j]+" ");
-			}
-			System.out.println("");
-		}
+//		int[][] distancias = icesi.getConections().dijkstra(icesi.search(salida.getValue()));
+//		for (int i = 0; i < distancias.length; i++) {
+//			for (int j = 0; j < distancias[i].length; j++) {
+//				System.out.print(distancias[i][j]+" ");
+//			}
+//			System.out.println("");
+//		}
 	
 		
 		Stack<Building> pila = icesi.getConections().dijkstraWay(icesi.search(salida.getValue()),(icesi.search(llegada.getValue())));
 		String subtitulo = "Usted se encuentra en: "+salida.getValue()+" y desea dirigirse a: "+llegada.getValue();
-		pila.pop();
+//		pila.pop();
 		String mensaje = "";
 		int i = 1;
 		while(!pila.isEmpty()) {

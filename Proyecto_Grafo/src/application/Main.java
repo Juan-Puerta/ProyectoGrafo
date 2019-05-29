@@ -58,7 +58,7 @@ public class Main extends Application {
 		}
 		System.out.println("");
 		System.out.println("");
-		Stack<Edge<Building, Road>> laFufa = theIcesiUniversity.getConections().prim(theIcesiUniversity.search("El saman"));
+		Stack<Edge<Building, Road>> laFufa = theIcesiUniversity.getConections().prim(theIcesiUniversity.search("SAMAN"));
 		while(!laFufa.isEmpty()) {
 			Edge<Building, Road> aux = laFufa.pop();
 			System.out.println(aux.getVertexOne().getNameBuilding()+" - "+aux.getWeight()+" - "+aux.getVertexTwo().getNameBuilding());
@@ -83,16 +83,16 @@ public class Main extends Application {
 	
 	public void addBuilding() {
 		
-		Building buildingA = new Building("edificio_a");	Building buildingN = new Building("edificio_n");	Building bCol1 = new Building("coliseo1");
-		Building buildingB = new Building("edificio_b");	Building buildingL = new Building("edificio_l");	Building bCol2 = new Building("coliseo2");
-		Building buildingC = new Building("edificio_b");	Building buildingK = new Building("edificio_k");
-		Building buildingD = new Building("edificio_d");	Building bSaman = new Building("saman");
-		Building buildingE = new Building("edificio_e");	Building bLibrary = new Building("biblioteca");	
-		Building buildingF = new Building("edificio_f");	Building bSoccerSix = new Building("cancha7");
-		Building buildingG = new Building("edificio_g");	Building bAudi = new Building("auditorios");
-		Building buildingI = new Building("edificio_i");	Building bCentral= new Building("central");
-		Building buildingJ = new Building("edificio_j");	Building bSoccerEleven = new Building("cancha11");
-		Building buildingM = new Building("edificio_m");	Building bCaba = new Building("caballeriza");
+		Building buildingA = new Building("Edificio A");	Building buildingN = new Building("Edificio N");	Building bCol1 = new Building("COLISEO 1");
+		Building buildingB = new Building("Edificio B");	Building buildingL = new Building("Edificio L");	Building bCol2 = new Building("COLISEO 2");
+		Building buildingC = new Building("Edificio C");	Building buildingK = new Building("Edificio K");
+		Building buildingD = new Building("Edificio D");	Building bSaman = new Building("SAMAN");
+		Building buildingE = new Building("Edificio E");	Building bLibrary = new Building("BIBLIOTECA");	
+		Building buildingF = new Building("Edificio F");	Building bSoccerSix = new Building("CANCHA 7");
+		Building buildingG = new Building("Edificio G");	Building bAudi = new Building("AUDITORIOS");
+		Building buildingI = new Building("Edificio I");	Building bCentral= new Building("CENTRAL");
+		Building buildingJ = new Building("Edificio J");	Building bSoccerEleven = new Building("CANCHA 11");
+		Building buildingM = new Building("Edificio M");	Building bCaba = new Building("CABALLERIZA");
 	
 		Road roadAM = new Road("A-M", 65);		Road roadCS = new Road("C-S", 120);		Road roadEI = new Road("E-I", 65);
 		Road roadAS = new Road("A-S", 78);		Road roadEf6 = new Road("E-f6", 60);
